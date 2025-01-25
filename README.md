@@ -1,6 +1,6 @@
 ![Screenshot](../screenshot.png)
 
-# Minesweeper (C - SDL2)
+# Minesweeper (C++ - SDL2)
 Uncover all non mine/flower tiles to win. Left click on a square to uncover it. Right click on a tile to mark it as a mine or with a question mark. These marks are purely for the user keep track of mines or unknown squares. They prevent that tile being uncovered by a left click. The top left number is the number of mines on the board minus the number of flags placed. The top right number is the elapsed time. Any numbered square holds the number of how many mines are immediately touching that square. The first turn may not end the game in a win or lose situation.
 
 # Build
@@ -11,8 +11,8 @@ You will need to make sure SDL2 and SDL2_image is installed.
 ```
 sudo pacman -S --needed base-devel sdl2 sdl2_image
 cd
-git clone https://github.com/ProgrammingRainbow/Minesweeper-C-SDL2
-cd Minesweeper-C-SDL2
+git clone https://github.com/ProgrammingRainbow/Minesweeper-Cpp-SDL2
+cd Minesweeper-Cpp-SDL2
 make run
 ```
 The Makefile builds debug by default. It also supports these commands:
