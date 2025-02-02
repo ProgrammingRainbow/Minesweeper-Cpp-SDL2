@@ -200,7 +200,6 @@ void Board::mouseUp(int x, int y, Uint8 button) {
                     this->checkWon();
                 }
                 if (this->first_turn && this->game_status != 0) {
-                    this->front_vec[row][column] = 9;
                     this->reset(this->mine_count, false);
                 } else {
                     break;
