@@ -32,7 +32,7 @@ class Board {
               first_turn{true} {}
 
         void init();
-        void reset();
+        void reset(bool full_reset);
         inline int gameStatus() const { return this->game_status; }
         inline int minesMarked() const { return this->mines_marked; }
         inline bool getPressed() const { return this->pressed; }

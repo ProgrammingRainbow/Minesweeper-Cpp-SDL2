@@ -17,7 +17,7 @@ Game::~Game() {
 }
 
 void Game::reset() {
-    this->board->reset();
+    this->board->reset(true);
     this->mines->reset(this->mine_count);
     this->clock->reset();
     this->face->defaultFace();

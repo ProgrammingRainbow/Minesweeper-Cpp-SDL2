@@ -13,13 +13,22 @@ void Board::init() {
 
     this->setScale(this->scale);
 
-    this->reset();
+    this->reset(true);
 }
 
-void Board::reset() {
-    this->front_vec.resize(this->rows, std::vector<std::size_t>(this->columns));
-    for (auto &row : this->front_vec) {
-        row.assign(this->columns, 9);
+void Board::reset(bool full_reset) {
+    if (full_reset) {
+        this->front_vec.resize(this->rows,
+                               std::vector<std::size_t>(this->columns));
+        for (auto &row : this->front_vec) {
+            row.assign(this->columns, 9);
+        }
+    } else {
+        for (auto &row : this->front_vec) {
+            for (auto &elem : row) {
+                elem = ((elem == 10) || (elem == 11)) ? elem : 9;
+            }
+        }
     }
 
     this->back_vec.resize(this->rows, std::vector<std::size_t>(this->columns));
@@ -189,7 +198,7 @@ void Board::mouseUp(int x, int y, Uint8 button) {
                     this->checkWon();
                 }
                 if (this->first_turn && this->game_status != 0) {
-                    this->reset();
+                    this->reset(false);
                 } else {
                     break;
                 }
